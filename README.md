@@ -1,4 +1,4 @@
-# Disease Analytics Optimization Test
+# Assessment
 
 ## Project Overview
 Build a file upload system that read though the attached CSV and inserts the content as individual items into a table using Laravel jobs/queue.

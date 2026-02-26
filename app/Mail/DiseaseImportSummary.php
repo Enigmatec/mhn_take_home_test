@@ -32,7 +32,7 @@ class DiseaseImportSummary extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Import Disease Mail Reprot',
+            subject: 'Summary Report – Disease CSV Import',
         );
     }
 
