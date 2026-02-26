@@ -61,6 +61,8 @@ php artisan serve
 Login Endpoint
 ```
 {baseUrl}/api/login : POST
+
+Login Details:
 {
     "email" : "admin@mhn.com",
     "password" : "password1@"
