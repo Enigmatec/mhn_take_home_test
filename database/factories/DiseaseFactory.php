@@ -18,7 +18,7 @@ class DiseaseFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory()->create()->id,
+            'user_id' => User::first()->id,
             'name' => fake()->word(),
             'description' => fake()->sentence(),
             'category' => fake()->word(),
