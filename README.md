@@ -15,9 +15,9 @@ Installation Steps
 
 Clone the repository:
 ```
-git clone https://github.com/Enigmatec/law_pavilion_test.git
+git clone git@github.com:Enigmatec/mhn_take_home_test.git
 
-cd law_pavilion_test
+cd mhn_take_home_test
 ```
 
 Install dependencies: 
@@ -54,20 +54,6 @@ OrderItem::factory()->count(100)->create()
 Start the application: 
 ```
 php artisan serve
-```
-Refresh/Repopulate Consolidated Order Table
-
-Run the following command:
-```
-php artisan refresh:consolidated-orders
-
-```
-Export Data to Excel
-
-Run the following command to export data:
-```
-php artisan export:consolidated-order
-
 ```
 ## Available Endpoints
 Import Endpoint: To import csv file for processing 
