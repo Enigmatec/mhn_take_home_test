@@ -68,11 +68,11 @@ Login Details:
     "password" : "password1@"
 }
 ```
-Import Endpoint: To import csv file for processing 
+Import Endpoint(protected): To import csv file for processing 
 ```
 {baseUrl}/api/import-diseases : POST
 ```
-Summary Report Endpoint: To get the summary report of the uploaded file
+Summary Report Endpoint(protected): To get the summary report of the uploaded file
 ```
 {baseUrl}/api/summary-reports/:id : Post
 ```
