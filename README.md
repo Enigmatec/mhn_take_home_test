@@ -10,7 +10,7 @@ The report sumamary of the uploaded csv file is send to the provided email and t
 ### Prerequisites
 #### PHP 8+
 #### Laravel 12
-#### MySQL 
+#### MySQL
 #### Composer
 
 Installation Steps

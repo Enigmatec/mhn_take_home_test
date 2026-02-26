@@ -21,7 +21,11 @@ class ProcessDiseaseImport implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(private string $path, private SummaryReport $report)
+    public function __construct(
+        private string $path, 
+        private SummaryReport $report,
+        private User $user
+    )
     {
         //
     }
@@ -33,7 +37,7 @@ class ProcessDiseaseImport implements ShouldQueue
     public function handle()
     {
         $this->report->update(['status' => 'processing']);
-        $result = ProcessDiseaseFile::process($this->path);
+        $result = ProcessDiseaseFile::process($this->path, $this->user);
         $this->report->update([
             'status' => 'completed',
             'response_data' => $result,

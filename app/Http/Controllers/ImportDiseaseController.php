@@ -15,10 +15,12 @@ class ImportDiseaseController extends Controller
     {
         $request->validate(['file' => ['required', 'mimes:csv,txt', 'max:2048']]);
 
+        $user = $request->user();
+
         $path = $request->file('file')->store('disease_imports');
         $report = SummaryReport::create(['file_path' => $path]);
 
-        ProcessDiseaseImport::dispatch($path, $report);
+        ProcessDiseaseImport::dispatch($path, $report, $user);
         return response()->json([
             'status' => true, 
             'message' => 'File uploaded successfully. The import process has been started and you will receive an email summary once it is completed and you can use the report ID to track the import process/response.',

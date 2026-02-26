@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Log;
 class ProcessDiseaseFile
 {
     
-    static function process(string $path): array{
+    static function process(string $path, User $user): array{
         $full_path = storage_path('app/private/' . $path);
 
         $file = fopen($full_path, 'r');
@@ -63,12 +63,13 @@ class ProcessDiseaseFile
 
                 Disease::updateOrCreate(
                     [
+                        'user_id' => $user->id,
                         'disease_code' => $row_data['diseaseCode'] ?? null,
                         'cat_id' => $row_data['catId'] ?? null,
                         'grade_code' => $row_data['gradeCode'] ?? null,
                     ],
                     [
-                        'user_id' => User::first()->id,
+                        'user_id' => $user->id,
                         'name' => $row_data['name'] ?? null,
                         'description' => $row_data['description'] ?? null,
                         'category' => $row_data['category'] ?? null,
