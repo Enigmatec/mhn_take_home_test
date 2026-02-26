@@ -3,7 +3,7 @@
 ## Project Overview
 Build a file upload system that read though the attached CSV and inserts the content as individual items into a table using Laravel jobs/queue.
 
-The report sumamary of the uploaded csv file is sent to the provided email and the report can also be queried using the summary report endpoint 
+The report sumamary of the uploaded csv file is send to the provided email and the report can also be queried using the summary report endpoint 
 
 
 ### Setup & Installation
@@ -48,9 +48,9 @@ Open Tinker:
 php artisan tinker
 
 ```
-Run Factories
+Run Seeder
 ```
-OrderItem::factory()->count(100)->create()
+php artisan db:seed
 
 ```
 Start the application: 
