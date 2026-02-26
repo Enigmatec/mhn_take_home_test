@@ -40,6 +40,10 @@ class ProcessDiseaseImport implements ShouldQueue
             'completed_at' => now(),
         ]);
         $mail_to = config('mail.to.address');
+        if (empty($mail_to)) {
+            Log::warning('No mail recipient configured for Disease Import Summary email.');
+            return;
+        }
         Mail::to($mail_to)->send(new DiseaseImportSummary(
             $result['total_processed'], 
             $result['total_inserted'], 
