@@ -58,6 +58,14 @@ Start the application:
 php artisan serve
 ```
 ## Available Endpoints
+Login Endpoint
+```
+{baseUrl}/api/login : POST
+{
+    "email" : "admin@mhn.com",
+    "password" : "password1@"
+}
+```
 Import Endpoint: To import csv file for processing 
 ```
 {baseUrl}/api/import-diseases : POST
